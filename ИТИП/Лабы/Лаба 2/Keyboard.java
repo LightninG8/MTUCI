@@ -41,10 +41,4 @@ public class Keyboard extends Device {
             this.printedLine += s;
         }
     }
-
-    public void editPrintedLine() {
-        if (!this.printedLine.isEmpty()) {
-            this.printedLine = this.printedLine.substring(0, printedLine.length()-1);
-        }
-    }
 }

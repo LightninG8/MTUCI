@@ -22,7 +22,6 @@ public class Headphones extends Device {
 
     @Override
     public void buyDevice() {
-        super.buyDevice();
         System.out.println("and there are a headphones!");
     }
 

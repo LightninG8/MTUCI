@@ -1,5 +1,4 @@
 public class HashTableEntry <T, K> {
-
     private T key;
     private K value;
 

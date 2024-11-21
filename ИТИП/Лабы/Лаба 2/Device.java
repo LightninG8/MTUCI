@@ -32,10 +32,7 @@ public abstract class Device {
         System.out.print("You have bought this very useful device ");
     }
 
-    public void showDetails() {
-        System.out.println("As you buying this stuff you have been agreed with our rules," +
-                " do not cross the line");
-    }
+    public void showDetails() {}
 
 
 }
