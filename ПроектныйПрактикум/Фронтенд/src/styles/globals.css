@@ -1,0 +1,40 @@
+@import url('https://fonts.cdnfonts.com/css/geometria');
+
+:root {
+  /* font colors */
+  --font-color-white: #F7F7F7;
+  --font-color-blue: #3E4480;
+  --font-color-black: #000532;
+
+  /* background colors */
+  --background-color-white: #F7F7F7;
+  --background-color-blue: #3E4480;
+  --background-color-black: #000532;
+  --background-color-light-blue: #DBDDF0;
+
+  /* transitions */
+  --transition-default: 0.2s ease;
+}
+
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  min-width: 0;
+}
+
+
+
+html {
+  font-size: 10px;
+  font-family: 'Geometria', sans-serif;
+}
+
+
+a {
+  text-decoration: none;
+}

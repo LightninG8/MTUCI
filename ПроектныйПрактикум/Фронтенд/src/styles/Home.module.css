@@ -1,0 +1,73 @@
+.home__body {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-column-gap: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+
+.home__slider {
+  margin-top: 20px;
+}
+
+.home__test {
+  padding: 40px 60px;
+
+  background: var(--background-color-light-blue);
+  border-radius: 15px;
+}
+
+
+.home__celebrities {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+
+.home__average {
+  padding-top: 20px;
+}
+
+.home__charts {
+  margin-top: 20px;
+}
+
+.home__description {
+  margin-top: 20px;
+}
+
+
+@media screen and (max-width: 1240px) {
+  .home__body {
+    grid-template-columns: 190px 1fr;
+    grid-column-gap: 30px;
+  }
+
+  .home__test {
+    padding: 20px 30px 30px 40px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .home__body {
+    padding-top: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-row-gap: 30px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .home__test {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .home__body {
+    grid-row-gap: 10px;
+  }
+}
+

@@ -1,0 +1,28 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+.main {
+  height: 100%;
+  margin-top: 90px;
+
+  font-size: 1.6rem;
+  line-height: 140%;
+
+  background: var(--background-color-white);
+  color: var(--font-color-black);
+  
+
+  flex-grow: 2;
+}
+
+
+@media screen and (max-width: 992px) {
+  .main {
+    margin-top: 60px;
+  }
+}

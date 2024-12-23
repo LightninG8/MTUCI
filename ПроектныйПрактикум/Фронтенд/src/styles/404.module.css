@@ -1,0 +1,37 @@
+.error__body {
+  padding-top: 100px;
+  padding-bottom: 60px;
+
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+.error__block {
+  padding: 40px 0;
+  width: 100%;
+  max-width: 500px;
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: center;
+
+  background: var(--background-color-light-blue);
+  border-radius: 25px;
+}
+
+.error__code {
+  font-size: 10rem;
+  line-height: 10rem;
+}
+
+.error__title {
+  font-size: 2rem;
+}
+
+.error__button {
+  margin-top: 40px;
+}
+

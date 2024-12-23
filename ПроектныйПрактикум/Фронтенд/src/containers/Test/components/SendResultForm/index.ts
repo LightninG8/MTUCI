@@ -1,0 +1,1 @@
+export { SendResultForm } from './SendResultForm';

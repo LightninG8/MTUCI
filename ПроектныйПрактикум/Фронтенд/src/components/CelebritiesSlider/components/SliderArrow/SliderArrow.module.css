@@ -1,0 +1,9 @@
+.arrow {
+  position: static;
+}
+
+.arrow:before {
+  font-size: 25px;
+  color: var(--background-color-blue)
+}
+

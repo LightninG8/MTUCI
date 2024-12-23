@@ -1,0 +1,161 @@
+.header {
+  position: fixed;
+  width: 100%;
+
+  background: var(--background-color-blue);
+  color: var(--font-color-white);
+  z-index: 10;
+}
+
+.header__body {
+  position: relative;
+
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 10px;
+  align-items: center;
+
+  color: var(--font-color-white);
+}
+
+.logo__title {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 2.8rem;
+}
+
+.logo__subtitle {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+
+
+.nav__menu {
+  
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 20px;
+  
+  list-style: none;
+}
+
+
+
+button.nav__button_start {
+  background: var(--background-color-white);
+  color: var(--font-color-blue);
+  border-color: var(--background-color-white);
+
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+button.nav__button_start:hover {
+  background: none;
+  color: var(--font-color-white);
+}
+
+button.nav__button_restore {
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  text-align: center;
+  border-color: var(--background-color-white);
+}
+
+button.nav__button_restore:hover {
+  background: var(--background-color-white);
+  color: var(--font-color-blue);
+}
+
+
+
+.header__burger {
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  width: 22px;
+  display: none;
+  grid-template-rows: auto auto;
+  grid-row-gap: 5px;
+  align-content: space-between;
+
+  transform: translateY(-50%);
+}
+
+.header__burger div {
+  height: 3px;
+
+  border-radius: 3px;
+  background: var(--background-color-white);
+}
+
+
+
+.header__mobile {
+  padding-bottom: 20px;
+  position: absolute;
+  top: calc(100% - 1px);
+
+  background: var(--background-color-blue);
+  width: 100%;
+}
+
+
+.mobile__menu {
+  list-style: none;
+}
+
+.mobile__item {
+  margin-top: 10px;
+
+}
+
+.mobile__link {
+  color: var(--font-color-white);
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+
+
+@media screen and (max-width: 992px) {
+  .header__body {
+    height: 60px;
+  }
+
+  .header__nav {
+    display: none;
+  }  
+
+  .header__burger {
+    display: grid;
+  }
+
+  .logo__logo {
+    width: 40px;
+  }
+  
+  .logo__title {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  
+  .logo__subtitle {
+    margin-top: 0;
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+}
+
+
+

@@ -1,0 +1,27 @@
+.button__body {
+  display: grid;
+  height: 50px;
+  padding: 0 30px;
+  align-items: center;
+
+  font-family: 'Geometria', sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.3rem;
+  text-align: center;
+
+  color: var(--font-color-white);
+  background: var(--background-color-blue);
+  border-radius: 70px;
+  border: 2px solid var(--background-color-blue);
+
+  cursor: pointer;
+
+  transition: var(--transition-default);
+}
+
+.button__body:hover {
+  background: none;
+
+  color: var(--font-color-blue);
+}
