@@ -1,15 +1,14 @@
-package TransformProcessor;
+package FilterProcessor;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
 import DataProcessor.DataProcessor;
 
-public class TransformProcessor {
+public class FilterProcessor {
     @DataProcessor
-    public List<String> transformToUpperCase(List<String> data) {
+    public List<String> filterShortWords(List<String> data) {
         return data.stream()
-                .map(String::toUpperCase)
+                .filter(word -> word.length() > 5)
                 .collect(Collectors.toList());
     }
 }

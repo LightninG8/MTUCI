@@ -1,30 +1,35 @@
 package DataManager;
 
+import DataProcessor.DataProcessor;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-import DataProcessor.DataProcessor;
 
 public class DataManager {
     private final List<Object> processors = new ArrayList<>();
     private List<String> data;
-    
-    // Méthode pour enregistrer un processeur
+
     public void registerDataProcessor(Object processor) {
         processors.add(processor);
     }
 
-    // Charger les données à partir d'une source
     public void loadData(String source) {
-        // Exemple de chargement (lecture fictive d'un fichier ou d'une source)
-        data = List.of("apple", "banana", "cherry", "date", "elderberry");
-        System.out.println("Données chargées : " + data);
+        try {
+            data = Files.readAllLines(Paths.get(source));
+            System.out.println("Данные загружены из " + source + " : " + data);
+        } catch (IOException e) {
+            System.err.println("Ошибка при загрузке данных из файла " + source + ": " + e.getMessage());
+            data = new ArrayList<>();
+        }
     }
 
-    // Traiter les données
     @SuppressWarnings("unchecked")
     public void processData() throws InterruptedException {
         ExecutorService executorService = Executors.newFixedThreadPool(4);
@@ -45,13 +50,15 @@ public class DataManager {
 
         executorService.shutdown();
         executorService.awaitTermination(10, TimeUnit.SECONDS);
-        System.out.println("Données après traitement : " + data);
+        System.out.println("Данные после обработки: " + data);
     }
 
-    // Enregistrer les données dans une destination
     public void saveData(String destination) {
-        // Exemple d'enregistrement (écriture fictive dans une destination)
-        System.out.println("Données enregistrées dans " + destination + " : " + data);
+        try {
+            Files.write(Paths.get(destination), data);
+            System.out.println("Данные сохранены в " + destination + " : " + data);
+        } catch (IOException e) {
+            System.err.println("Ошибка при сохранении данных в файл " + destination + ": " + e.getMessage());
+        }
     }
 }
-
