@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Журнал — Электронный журнал{% endblock %}
+{% block content %}
+<div class="page-heading"><div><h1>Журнал</h1><p>Выберите группу и нажмите на ячейку, чтобы поставить или изменить оценку.</p></div></div>
+<p id="status" class="status" role="status" aria-live="polite" hidden></p>
+<div class="toolbar">
+  <label>Группа<select id="group-select"></select></label>
+  <p class="legend" aria-label="Цвета оценок"><span class="grade-button mark-5">5</span><span class="grade-button mark-4">4</span><span class="grade-button mark-3">3</span><span class="grade-button failing">2</span><span class="grade-button empty">+</span><span class="muted">нет оценки</span></p>
+</div>
+<section id="editor" class="editor" aria-labelledby="editor-title" hidden>
+  <h2 id="editor-title">Оценка</h2>
+  <p id="editor-context" class="muted"></p>
+  <form id="grade-form">
+    <div class="form-fields">
+      <label>Оценка
+        <select id="grade-mark">
+          <option value="5">5</option><option value="4">4</option>
+          <option value="3">3</option><option value="2">2</option>
+        </select>
+      </label>
+    </div>
+    <div class="button-row">
+      <button class="button-primary" type="submit">Сохранить</button>
+      <button id="delete-grade" class="button-danger" type="button">Удалить оценку</button>
+      <button id="cancel-edit" type="button">Отмена</button>
+    </div>
+  </form>
+</section>
+<div class="table-scroll">
+  <table class="journal-table"><thead id="table-head"></thead><tbody id="table-body"></tbody></table>
+</div>
+{% endblock %}
+{% block scripts %}<script type="module" src="{{ url_for('journal.static', filename='journal.js') }}"></script>{% endblock %}

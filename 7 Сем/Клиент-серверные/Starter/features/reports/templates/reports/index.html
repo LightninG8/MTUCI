@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Отчёты — Электронный журнал{% endblock %}
+{% block content %}
+<div class="page-heading"><div><h1>Отчёты</h1><p>Сводные показатели по группам и списки студентов, которым нужно внимание.</p></div></div>
+<p id="status" class="status" role="status" aria-live="polite" hidden></p>
+<div id="summary" class="stats" hidden></div>
+<div class="toolbar">
+  <label>Отчёт
+    <select id="report-kind">
+      <option value="groups">Показатели групп</option>
+      <option value="no_grades">Студенты без оценок</option>
+      <option value="failing">Студенты с двойками</option>
+    </select>
+  </label>
+</div>
+<div class="table-scroll"><table><thead id="table-head"></thead><tbody id="table-body"></tbody></table></div>
+{% endblock %}
+{% block scripts %}<script type="module" src="{{ url_for('reports.static', filename='reports.js') }}"></script>{% endblock %}
